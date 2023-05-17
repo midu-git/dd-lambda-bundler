@@ -1,0 +1,45 @@
+{
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"],
+    "files": ["global.d.ts"],
+    "compilerOptions": {
+        "target": "ES2020",
+        "moduleResolution": "Node",
+        "module": "commonjs",
+        "isolatedModules": true,
+        "declaration": false,
+        "sourceMap": false,
+        "experimentalDecorators": false,
+        "esModuleInterop": true,
+
+        "outDir": "dist",
+        "noEmit": true,
+
+        "rootDirs": ["src"],
+        "typeRoots": ["node_modules/@types"],
+        "baseUrl": "./",
+        "paths": {
+            "@/src/*": ["src/*"]
+        },
+
+        "skipLibCheck": true,
+        "pretty": true,
+
+        // Code quality options
+        // https://blog.openreplay.com/improving-code-quality-in-typescript-with-compiler-options
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "strictNullChecks": false,
+        "noImplicitThis": true,
+        "strictBindCallApply": true,
+        "resolveJsonModule": true
+    },
+    "ts-node": {
+        "require": ["tsconfig-paths/register"]
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "dd-lambda-bundler",
+    "version": "1.0.0",
+    "description": "Minimum project for datadog-lambda-js including esbuild",
+    "homepage": "https://github.com/midu-git/dd-lambda-bundler",
+    "license": "ISC",
+    "author": "",
+    "private": false,
+    "main": "index.js",
+    "workspaces": [
+        "infrastructure"
+    ],
+    "scripts": {
+        "build": "node scripts/build.js",
+        "deploy": "npm run build && npm run pulumi:deploy",
+        "pulumi:deploy": "npm run pulumi:deploy --workspace infrastructure",
+        "pulumi:up": "npm run pulumi:up --workspace infrastructure",
+        "pulumi:cancel": "npm run pulumi:cancel --workspace infrastructure",
+        "pulumi:cancelAndRefresh": "npm run pulumi:cancelAndRefresh --workspace infrastructure",
+        "pulumi:refresh": "npm run pulumi:refresh --workspace infrastructure"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:midu-git/dd-lambda-bundler"
+    },
+    "devDependencies": {
+        "@jgoz/esbuild-plugin-typecheck": "3.0.2",
+        "esbuild": "0.17.19",
+        "graphql": "^16.6.0",
+        "ts-node": "10.9.1",
+        "typescript": "5.0.4"
+    },
+    "dependencies": {
+        "datadog-lambda-js": "7.91.0",
+        "dd-trace": "^4.0.0"
+    },
+    "engines": {
+        "node": ">= 18.12.1",
+        "npm": ">= 8.19"
+    }
+}

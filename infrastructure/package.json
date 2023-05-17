@@ -1,0 +1,21 @@
+{
+    "name": "dd-lambda-bundler-app",
+    "version": "1.0.0",
+    "scripts": {
+        "typecheck": "tsc --noEmit --skipLibCheck",
+        "pulumi": "npm run pulumi:login && pulumi --color always --emoji",
+        "pulumi:login": "pulumi stack select ${STACK}",
+        "pulumi:deploy": "npm run pulumi:up -- --yes",
+        "pulumi:cancel": "npm run pulumi -- cancel --yes",
+        "pulumi:refresh": "npm run pulumi -- refresh --yes",
+        "pulumi:up": "npm run pulumi -- up",
+        "update": "npx npm-check-updates -u -x '@types/node'"
+    },
+    "devDependencies": {
+        "@pulumi/aws": "^5.35.0",
+        "@pulumi/aws-native": "^0.61.0",
+        "@pulumi/pulumi": "^3.63.0",
+        "@types/node": "18.16.9"
+    },
+    "dependencies": {}
+}

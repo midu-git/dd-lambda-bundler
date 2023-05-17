@@ -1,0 +1,8 @@
+name: midu-lambda-bundler
+runtime: nodejs
+description: Minimum project for datadog-lambda-js including esbuild
+backend:
+  url: s3://infrastructure.production.billing.mrge/midu-lambda-bundler-app?awssdk=v2&region=eu-central-1
+config:
+  aws:region: eu-central-1
+  name: midu-lambda-bundler
